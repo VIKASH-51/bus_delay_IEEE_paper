@@ -1,9 +1,14 @@
 @import "tailwindcss";
 @import 'leaflet/dist/leaflet.css';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
-    color-scheme: light dark;
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
   }
 
   body {
@@ -11,6 +16,14 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #f8fafc;
+    color: #0f172a;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dark body {
+    background-color: #030712;
+    color: #f8fafc;
   }
 }
 
@@ -30,29 +43,29 @@
   background: rgba(156, 163, 175, 0.7);
 }
 
-/* Glassmorphism utilities */
+/* Theme Surface Utilities */
+.app-card,
 .glass-panel {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
 }
+.dark .app-card,
 .dark .glass-panel {
-  background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(51, 65, 85, 0.8);
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  color: #f8fafc;
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(226, 232, 240, 0.7);
+.app-subcard {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
 }
-.dark .glass-card {
-  background: rgba(30, 41, 59, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(51, 65, 85, 0.6);
+.dark .app-subcard {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
 }
 
 /* Leaflet Map Custom Styles */
@@ -62,6 +75,9 @@
   font-family: inherit;
   border-radius: inherit;
   z-index: 10;
+  background-color: #e2e8f0;
+}
+.dark .leaflet-container {
   background-color: #0f172a;
 }
 
@@ -72,7 +88,7 @@
 
 .leaflet-popup-content-wrapper {
   background: #ffffff;
-  color: #1e293b;
+  color: #0f172a;
   border-radius: 12px;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
   padding: 4px;

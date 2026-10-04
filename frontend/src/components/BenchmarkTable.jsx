@@ -47,7 +47,7 @@ export default function BenchmarkTable() {
     <div className="w-full space-y-6">
       {/* Benchmark Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="p-5 rounded-2xl glass-panel border border-blue-200 dark:border-blue-900/60 bg-blue-50/50 dark:bg-blue-950/20">
+        <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
               Proposed MAE
@@ -63,7 +63,7 @@ export default function BenchmarkTable() {
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20">
+        <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
               Proposed Acc₃
@@ -79,7 +79,7 @@ export default function BenchmarkTable() {
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/50 dark:bg-emerald-950/20">
+        <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
               Proposed R²
@@ -95,7 +95,7 @@ export default function BenchmarkTable() {
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-purple-200 dark:border-purple-900/60 bg-purple-50/50 dark:bg-purple-950/20">
+        <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
               Proposed Acc₁
@@ -113,7 +113,7 @@ export default function BenchmarkTable() {
       </div>
 
       {/* Model Benchmark Table */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm overflow-x-auto">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-x-auto">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h3 className="font-bold text-base text-slate-900 dark:text-white">
@@ -127,15 +127,15 @@ export default function BenchmarkTable() {
 
         <table className="w-full text-left text-xs border-collapse">
           <thead>
-            <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">
-              <th className="py-3 px-4">Model Architecture</th>
-              <th className="py-3 px-3 text-right">MAE (min) ↓</th>
-              <th className="py-3 px-3 text-right">RMSE (min) ↓</th>
-              <th className="py-3 px-3 text-right">MAPE (%) ↓</th>
-              <th className="py-3 px-3 text-right">R² ↑</th>
-              <th className="py-3 px-3 text-right">Acc₁ (≤1m) ↑</th>
-              <th className="py-3 px-3 text-right">Acc₃ (≤3m) ↑</th>
-              <th className="py-3 px-3 text-right">Acc₅ (≤5m) ↑</th>
+            <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 uppercase tracking-wider font-bold">
+              <th className="py-3.5 px-4">Model Architecture</th>
+              <th className="py-3.5 px-3 text-right">MAE (min) ↓</th>
+              <th className="py-3.5 px-3 text-right">RMSE (min) ↓</th>
+              <th className="py-3.5 px-3 text-right">MAPE (%) ↓</th>
+              <th className="py-3.5 px-3 text-right">R² ↑</th>
+              <th className="py-3.5 px-3 text-right">Acc₁ (≤1m) ↑</th>
+              <th className="py-3.5 px-3 text-right">Acc₃ (≤3m) ↑</th>
+              <th className="py-3.5 px-3 text-right">Acc₅ (≤5m) ↑</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -146,8 +146,8 @@ export default function BenchmarkTable() {
                   key={idx}
                   className={`transition-colors font-mono ${
                     isProposed
-                      ? 'bg-blue-500/10 dark:bg-blue-950/40 font-bold text-blue-900 dark:text-blue-200'
-                      : 'hover:bg-slate-50 dark:hover:bg-slate-800/40 text-slate-700 dark:text-slate-300'
+                      ? 'bg-blue-50/80 dark:bg-blue-950/60 font-bold text-blue-900 dark:text-blue-200'
+                      : 'hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200'
                   }`}
                 >
                   <td className="py-3.5 px-4 font-sans font-semibold flex items-center gap-2">
@@ -176,7 +176,7 @@ export default function BenchmarkTable() {
       </div>
 
       {/* Benchmark Visual Comparison Charts */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
           <div>
             <h3 className="font-bold text-base text-slate-900 dark:text-white">
@@ -187,7 +187,7 @@ export default function BenchmarkTable() {
             </p>
           </div>
 
-          <div className="flex items-center space-x-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+          <div className="flex items-center space-x-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
             {['mae', 'rmse', 'acc3', 'r2'].map((metric) => (
               <button
                 key={metric}

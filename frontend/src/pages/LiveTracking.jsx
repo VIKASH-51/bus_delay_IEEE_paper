@@ -80,7 +80,7 @@ export default function LiveTracking() {
           />
 
           {/* Active Fleet List */}
-          <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
             <span className="font-bold text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
               Live Fleet Status ({liveVehicles.length} Active Vehicles)
             </span>

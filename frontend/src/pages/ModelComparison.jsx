@@ -15,7 +15,7 @@ export default function ModelComparison() {
       <StatusBanner />
 
       {/* Header */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
         <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400">
           <Trophy className="w-5 h-5" />
           <h2 className="text-xl font-bold text-slate-900 dark:text-white">

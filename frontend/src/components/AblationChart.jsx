@@ -56,7 +56,7 @@ export default function AblationChart() {
   return (
     <div className="w-full space-y-6">
       {/* Overview Card */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
         <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 mb-2">
           <FlaskConical className="w-5 h-5" />
           <h3 className="font-bold text-base text-slate-900 dark:text-white">
@@ -76,8 +76,8 @@ export default function AblationChart() {
                 key={idx}
                 className={`p-4 rounded-xl border flex flex-col justify-between transition-all ${
                   isFull
-                    ? 'bg-emerald-500/10 dark:bg-emerald-950/30 border-emerald-400 dark:border-emerald-700 shadow-md ring-2 ring-emerald-500/20'
-                    : 'bg-white dark:bg-slate-800/60 border-slate-200 dark:border-slate-700'
+                    ? 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-400 dark:border-emerald-700 shadow-md ring-2 ring-emerald-500/20'
+                    : 'bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700'
                 }`}
               >
                 <div>
@@ -125,7 +125,7 @@ export default function AblationChart() {
       {/* Side-by-Side Comparison Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* MAE Comparison Chart */}
-        <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">
             Mean Absolute Error (MAE) by Configuration (Lower is Better ↓)
           </h4>
@@ -157,7 +157,7 @@ export default function AblationChart() {
         </div>
 
         {/* Acc3 Accuracy Comparison Chart */}
-        <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">
             Acc₃ Accuracy (Within ±3 min) by Configuration (Higher is Better ↑)
           </h4>

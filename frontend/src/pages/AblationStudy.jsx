@@ -15,7 +15,7 @@ export default function AblationStudy() {
       <StatusBanner />
 
       {/* Header */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
         <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400">
           <FlaskConical className="w-5 h-5" />
           <h2 className="text-xl font-bold text-slate-900 dark:text-white">
@@ -31,7 +31,7 @@ export default function AblationStudy() {
       <AblationChart />
 
       {/* Architectural Insights Box */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
         <h3 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
           <span>Key Research Findings from Ablation Analysis</span>

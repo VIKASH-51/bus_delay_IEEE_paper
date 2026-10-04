@@ -93,7 +93,7 @@ export default function DataPipelineDiagram() {
 
   return (
     <div className="w-full space-y-6">
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
         <h3 className="font-bold text-base text-slate-900 dark:text-white mb-2">
           End-to-End Spatiotemporal Data & Prediction Pipeline
         </h3>
@@ -114,7 +114,7 @@ export default function DataPipelineDiagram() {
                 className={`p-4 rounded-xl border text-left transition-all flex flex-col justify-between ${
                   isSelected
                     ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-400 scale-[1.02]'
-                    : 'bg-white dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 hover:border-blue-400'
+                    : 'bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 hover:border-blue-400 border-slate-200 dark:border-slate-700'
                 }`}
               >
                 <div>
@@ -142,7 +142,7 @@ export default function DataPipelineDiagram() {
       </div>
 
       {/* Selected Step Detail Inspector */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 space-y-3">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
         <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 font-bold text-sm">
           <CheckCircle2 className="w-5 h-5" />
           <span>Detailed Architecture of {steps[activeStep].title}</span>

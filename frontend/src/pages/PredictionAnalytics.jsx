@@ -54,7 +54,7 @@ export default function PredictionAnalytics() {
       <StatusBanner />
 
       {/* Header */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
         <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 mb-1">
           <BarChart3 className="w-5 h-5" />
           <h2 className="text-xl font-bold text-slate-900 dark:text-white">
@@ -68,7 +68,7 @@ export default function PredictionAnalytics() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800">
+        <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             Prediction Latency
           </span>
@@ -81,7 +81,7 @@ export default function PredictionAnalytics() {
           <span className="text-[11px] text-emerald-500 font-semibold">Sub-10ms real-time throughput</span>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800">
+        <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             Residual Mean (Bias)
           </span>
@@ -92,7 +92,7 @@ export default function PredictionAnalytics() {
           <span className="text-[11px] text-emerald-500 font-semibold">Virtually unbiased predictions</span>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800">
+        <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             Acc₃ Proximity (≤ 3 min)
           </span>
@@ -103,7 +103,7 @@ export default function PredictionAnalytics() {
           <span className="text-[11px] text-emerald-500 font-semibold">High passenger satisfaction</span>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800">
+        <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             Active Device Engine
           </span>
@@ -117,7 +117,7 @@ export default function PredictionAnalytics() {
       {/* Grid: Error Histogram & Feature Importance */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Residual Error Distribution Histogram */}
-        <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <h3 className="font-bold text-sm text-slate-900 dark:text-white mb-1">
             Residual Error Histogram (Minutes)
           </h3>
@@ -150,7 +150,7 @@ export default function PredictionAnalytics() {
         </div>
 
         {/* Feature Importance Bar Chart */}
-        <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <h3 className="font-bold text-sm text-slate-900 dark:text-white mb-1">
             Context Branch Feature Importance
           </h3>

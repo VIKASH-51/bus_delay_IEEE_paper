@@ -60,7 +60,7 @@ export default function StopDetails() {
       <StatusBanner />
 
       {/* Stop Information Board Header */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center space-x-3">
             <div className="p-3 rounded-2xl bg-blue-600 text-white shadow-md">
@@ -101,7 +101,7 @@ export default function StopDetails() {
       </div>
 
       {/* Live Digital Station Departures Board */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
         <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
           <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
             <Radio className="w-4 h-4 text-emerald-500 animate-pulse" />

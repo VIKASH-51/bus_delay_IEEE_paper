@@ -20,9 +20,9 @@ export default function EtaCard({ prediction, onSelectVehicle }) {
 
   if (!prediction) {
     return (
-      <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-center">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
         <Bus className="w-8 h-8 text-slate-400 mx-auto mb-2 animate-bounce" />
-        <p className="text-sm font-medium text-slate-300">
+        <p className="text-sm font-medium text-slate-600 dark:text-slate-300">
           Select an active bus to inspect real-time delay & ETA predictions.
         </p>
       </div>

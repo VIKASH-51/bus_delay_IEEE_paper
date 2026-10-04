@@ -60,31 +60,31 @@ export default function ModelArchDiagram() {
   return (
     <div className="w-full space-y-6">
       {/* Diagram Canvas */}
-      <div className="p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm overflow-x-auto">
+      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-x-auto">
         <div className="min-w-[700px] flex flex-col items-center space-y-6">
           
           {/* Top Level: Dual Input Sources */}
           <div className="grid grid-cols-2 gap-8 w-full">
             {/* Input 1 */}
-            <div className="p-3.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-center">
+            <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-center">
               <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-0.5">
                 Input Stream 1
               </span>
-              <p className="font-bold text-xs text-slate-800 dark:text-slate-200 font-mono">
+              <p className="font-bold text-xs text-slate-900 dark:text-slate-100 font-mono">
                 Delay Window (Last 12 Stops)
               </p>
-              <span className="text-[10px] text-slate-500 font-mono">[Delay, Travel Time, Dwell Time]</span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">[Delay, Travel Time, Dwell Time]</span>
             </div>
 
             {/* Input 2 */}
-            <div className="p-3.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 text-center">
+            <div className="p-4 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-center">
               <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 block mb-0.5">
                 Input Stream 2
               </span>
-              <p className="font-bold text-xs text-slate-800 dark:text-slate-200 font-mono">
+              <p className="font-bold text-xs text-slate-900 dark:text-slate-100 font-mono">
                 Spatiotemporal Context (14 Features)
               </p>
-              <span className="text-[10px] text-slate-500 font-mono">[Time, Peak, Headway, Coords, Progress]</span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">[Time, Peak, Headway, Coords, Progress]</span>
             </div>
           </div>
 
@@ -96,14 +96,14 @@ export default function ModelArchDiagram() {
               className={`p-4 rounded-xl border text-left transition-all relative ${
                 selectedNode === 'branch1_seq'
                   ? 'bg-blue-600 text-white shadow-lg ring-2 ring-blue-400 scale-[1.02]'
-                  : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:border-blue-400 dark:hover:border-blue-500'
+                  : 'bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:border-blue-400 dark:hover:border-blue-500 border-slate-200 dark:border-slate-700'
               }`}
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="font-bold text-xs flex items-center gap-1.5">
                   <Cpu className="w-4 h-4" /> Branch 1: Sequence Encoder
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 text-white">
                   2-Layer GRU
                 </span>
               </div>
@@ -121,14 +121,14 @@ export default function ModelArchDiagram() {
               className={`p-4 rounded-xl border text-left transition-all relative ${
                 selectedNode === 'branch2_ctx'
                   ? 'bg-indigo-600 text-white shadow-lg ring-2 ring-indigo-400 scale-[1.02]'
-                  : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:border-indigo-400 dark:hover:border-indigo-500'
+                  : 'bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:border-indigo-400 dark:hover:border-indigo-500 border-slate-200 dark:border-slate-700'
               }`}
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="font-bold text-xs flex items-center gap-1.5">
                   <Layers className="w-4 h-4" /> Branch 2: Context Encoder
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 text-white">
                   Dense + ReLU
                 </span>
               </div>
@@ -149,13 +149,13 @@ export default function ModelArchDiagram() {
             className={`w-full p-5 rounded-2xl border text-left transition-all relative ${
               selectedNode === 'gated_fusion'
                 ? 'bg-gradient-to-r from-blue-700 to-indigo-700 text-white shadow-xl ring-2 ring-blue-400 scale-[1.01]'
-                : 'bg-slate-900 text-white hover:border-blue-400'
+                : 'bg-slate-900 text-white hover:border-blue-400 border-slate-800'
             }`}
           >
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-2">
                 <Sparkles className="w-5 h-5 text-amber-400" />
-                <span className="font-bold text-sm">
+                <span className="font-bold text-sm text-white">
                   Gated Fusion Unit: Dynamic Combination z = g·h + (1-g)·c
                 </span>
               </div>
@@ -165,8 +165,8 @@ export default function ModelArchDiagram() {
             </div>
 
             {/* Dynamic Gate live balance meter */}
-            <div className="p-3 bg-black/30 rounded-xl space-y-2">
-              <div className="flex justify-between text-xs">
+            <div className="p-3 bg-black/40 rounded-xl space-y-2">
+              <div className="flex justify-between text-xs text-white">
                 <span>Sequence Weight (g): <strong>{seqPct}%</strong></span>
                 <span>Context Weight (1-g): <strong>{ctxPct}%</strong></span>
               </div>
@@ -185,7 +185,7 @@ export default function ModelArchDiagram() {
             className={`w-full max-w-xl p-4 rounded-xl border text-center transition-all ${
               selectedNode === 'prediction_head'
                 ? 'bg-emerald-600 text-white shadow-lg ring-2 ring-emerald-400'
-                : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:border-emerald-400'
+                : 'bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:border-emerald-400 border-slate-200 dark:border-slate-700'
             }`}
           >
             <span className="font-bold text-xs uppercase tracking-wider block mb-1">
@@ -202,15 +202,15 @@ export default function ModelArchDiagram() {
       </div>
 
       {/* Layer Detail Inspector */}
-      <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 space-y-3">
+      <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
         <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 font-bold text-sm">
           <Info className="w-4 h-4" />
           <span>{current.title}</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          <div className="space-y-1.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700">
-            <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px] block">
+          <div className="space-y-1.5 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <span className="font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-[10px] block">
               Mathematical Formulation
             </span>
             <p className="font-mono text-slate-900 dark:text-slate-100 font-semibold bg-white dark:bg-slate-900 p-2 rounded border border-slate-200 dark:border-slate-800">
@@ -218,21 +218,21 @@ export default function ModelArchDiagram() {
             </p>
           </div>
 
-          <div className="space-y-1.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700">
-            <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px] block">
+          <div className="space-y-1.5 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <span className="font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-[10px] block">
               Tensor Input & Output Shapes
             </span>
-            <p className="text-slate-700 dark:text-slate-200 font-mono">
+            <p className="text-slate-800 dark:text-slate-200 font-mono">
               <strong>In:</strong> {current.inputShape}
             </p>
-            <p className="text-slate-700 dark:text-slate-200 font-mono">
+            <p className="text-slate-800 dark:text-slate-200 font-mono">
               <strong>Out:</strong> {current.outputShape}
             </p>
           </div>
         </div>
 
-        <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border border-slate-200/40 dark:border-slate-700/40">
-          <strong>Mechanism Rationale: </strong> {current.explanation}
+        <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 text-xs text-slate-700 dark:text-slate-300 leading-relaxed border border-slate-200 dark:border-slate-700">
+          <strong className="text-slate-900 dark:text-white">Mechanism Rationale: </strong> {current.explanation}
         </div>
       </div>
     </div>
