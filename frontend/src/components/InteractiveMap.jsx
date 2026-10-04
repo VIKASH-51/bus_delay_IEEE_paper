@@ -9,7 +9,7 @@ function MapCenterController({ center }) {
   const map = useMap();
   useEffect(() => {
     if (center) {
-      map.flyTo(center, 13, { duration: 1.2 });
+      map.flyTo(center, 13, { duration: 1.0 });
     }
   }, [center, map]);
   return null;
@@ -33,9 +33,10 @@ function createBusIcon(routeShortName, isSelected, status) {
         display: flex;
         align-items: center;
         gap: 4px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
         border: 2px solid white;
         transform: translate(-50%, -50%);
+        white-space: nowrap;
       ">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <rect x="3" y="3" width="18" height="18" rx="4"/>
@@ -46,35 +47,35 @@ function createBusIcon(routeShortName, isSelected, status) {
         <span>${routeShortName}</span>
       </div>
     `,
-    iconSize: [40, 24],
-    iconAnchor: [20, 12],
+    iconSize: [44, 24],
+    iconAnchor: [22, 12],
   });
 }
 
-function createStopIcon(sequence, isSelected) {
+function createStopIcon(sequence) {
   return L.divIcon({
     className: 'custom-stop-marker',
     html: `
       <div style="
-        background: ${isSelected ? '#3b82f6' : '#ffffff'};
-        color: ${isSelected ? '#ffffff' : '#1e293b'};
-        width: 22px;
-        height: 22px;
+        background: #ffffff;
+        color: #1e293b;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 10px;
         font-weight: bold;
-        border: 2px solid ${isSelected ? '#1d4ed8' : '#64748b'};
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        border: 2px solid #3b82f6;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
         transform: translate(-50%, -50%);
       ">
         ${sequence}
       </div>
     `,
-    iconSize: [22, 22],
-    iconAnchor: [11, 11],
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
   });
 }
 
@@ -93,13 +94,11 @@ export default function InteractiveMap({ height = "450px" }) {
   const activeVehicle = liveVehicles.find((v) => v.vehicle_id === selectedVehicleId) || liveVehicles[0];
   const centerPos = activeVehicle ? [activeVehicle.latitude, activeVehicle.longitude] : [11.0183, 76.9656];
 
-  // Map Tile layer URLs
-  const tileUrl = darkMode
-    ? 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  // Standard OpenStreetMap tile URL (Reliable, 100% Free, Zero API keys)
+  const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 
   return (
-    <div className="w-full rounded-2xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 relative z-0" style={{ height }}>
+    <div className={`w-full rounded-2xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 relative z-0 ${darkMode ? 'dark-map-container' : ''}`} style={{ height }}>
       <MapContainer
         center={centerPos}
         zoom={13}
@@ -110,6 +109,7 @@ export default function InteractiveMap({ height = "450px" }) {
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url={tileUrl}
+          className={darkMode ? 'leaflet-dark-tiles' : ''}
         />
 
         {/* Live Buses Markers */}

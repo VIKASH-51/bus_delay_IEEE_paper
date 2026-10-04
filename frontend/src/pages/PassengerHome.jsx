@@ -41,7 +41,7 @@ export default function PassengerHome() {
 
   return (
     <div className="w-full space-y-6">
-      {/* Top Feed Status & Fallback Notification */}
+      {/* Top Feed Status & Fallback Notification (Shows banner only if fallback/stale or system badge) */}
       <StatusBanner />
 
       {/* Hero Welcome Banner */}
@@ -51,15 +51,15 @@ export default function PassengerHome() {
         </div>
 
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold mb-3 border border-white/20">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-xs font-semibold mb-3 border border-white/20">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             <span>AI Spatiotemporal Delay Prediction Engine</span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-2">
+          <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-2 text-white">
             Real-Time Bus Arrivals & Accurate ETAs
           </h1>
-          <p className="text-sm text-blue-100/90 leading-relaxed mb-6">
+          <p className="text-sm text-blue-100 leading-relaxed mb-6">
             Powered by two-branch gated recurrent neural networks learning temporal congestion, passenger dwell variances, and transit topology.
           </p>
 
@@ -71,7 +71,7 @@ export default function PassengerHome() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search route number, corridor name, or destination..."
-              className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm shadow-lg"
+              className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm shadow-lg font-medium"
             />
           </div>
         </div>
@@ -88,13 +88,13 @@ export default function PassengerHome() {
           />
 
           {/* Route Selector Pills */}
-          <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
             <div className="flex items-center justify-between">
               <span className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
                 <Bus className="w-4 h-4 text-blue-500" />
                 <span>Select Active Route</span>
               </span>
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-slate-400 font-medium">
                 {filteredRoutes.length} Available Corridors
               </span>
             </div>
@@ -112,14 +112,14 @@ export default function PassengerHome() {
                     }}
                     className={`p-3 rounded-xl border text-center transition-all ${
                       isSelected
-                        ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-400 font-bold'
-                        : 'bg-slate-50 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-700'
+                        ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-400 font-bold border-blue-600'
+                        : 'bg-slate-50 dark:bg-slate-800/90 hover:bg-slate-100 dark:hover:bg-slate-750 text-slate-800 dark:text-slate-100 border-slate-200 dark:border-slate-700'
                     }`}
                   >
                     <span className="block text-base font-black">
                       {r.route_short_name}
                     </span>
-                    <span className={`text-[10px] truncate block ${isSelected ? 'text-blue-100' : 'text-slate-500 dark:text-slate-400'}`}>
+                    <span className={`text-[10px] truncate block font-medium ${isSelected ? 'text-blue-100' : 'text-slate-500 dark:text-slate-400'}`}>
                       {r.route_long_name.split('-')[0]}
                     </span>
                   </button>
@@ -129,7 +129,7 @@ export default function PassengerHome() {
           </div>
 
           {/* Buses Active on this Corridor */}
-          <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
             <div className="flex items-center justify-between">
               <span className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
                 <Radio className="w-4 h-4 text-emerald-500" />
@@ -149,23 +149,23 @@ export default function PassengerHome() {
                   <div
                     key={v.vehicle_id}
                     onClick={() => setSelectedVehicleId(v.vehicle_id)}
-                    className={`p-3 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
+                    className={`p-3.5 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
                       isSelected
-                        ? 'bg-blue-50 dark:bg-blue-950/40 border-blue-400 dark:border-blue-600 shadow-sm'
-                        : 'bg-white dark:bg-slate-800/40 border-slate-200 dark:border-slate-700/60 hover:border-blue-300'
+                        ? 'bg-blue-50 dark:bg-blue-950/60 border-blue-400 dark:border-blue-500 shadow-sm'
+                        : 'bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700/80 hover:border-blue-300 dark:hover:border-slate-600'
                     }`}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className={`p-2 rounded-lg font-bold text-xs font-mono ${
-                        isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200'
+                      <div className={`px-2.5 py-1.5 rounded-lg font-bold text-xs font-mono ${
+                        isSelected ? 'bg-blue-600 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100'
                       }`}>
                         {v.vehicle_id.split('_').slice(1).join('_')}
                       </div>
                       <div>
-                        <p className="font-bold text-xs text-slate-800 dark:text-slate-100">
+                        <p className="font-bold text-xs text-slate-900 dark:text-white">
                           Next: {v.next_stop_name}
                         </p>
-                        <p className="text-[10px] text-slate-500">
+                        <p className="text-[11px] text-slate-500 dark:text-slate-400">
                           Progress: {Math.round(v.trip_progress * 100)}% • Speed: {v.speed_kmh} km/h
                         </p>
                       </div>
@@ -175,8 +175,8 @@ export default function PassengerHome() {
                       <span className="font-mono font-bold text-xs text-blue-600 dark:text-blue-300 block">
                         {pred ? pred.predicted_eta_display : 'ETA...'}
                       </span>
-                      <span className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold ${
-                        v.current_delay_min > 2 ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800'
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold ${
+                        v.current_delay_min > 2 ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-800' : 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800'
                       }`}>
                         {pred ? pred.delay_display : `${v.current_delay_min}m`}
                       </span>
@@ -190,7 +190,7 @@ export default function PassengerHome() {
 
         {/* Right Column: Live Interactive Corridor Map (5 cols) */}
         <div className="lg:col-span-5 space-y-4">
-          <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
             <div className="flex items-center justify-between">
               <span className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
                 <MapPin className="w-4 h-4 text-blue-500" />
@@ -209,7 +209,7 @@ export default function PassengerHome() {
           </div>
 
           {/* Research Highlight Box */}
-          <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-50 to-blue-50/30 dark:from-slate-900/60 dark:to-blue-950/20 shadow-sm space-y-2">
+          <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50/40 dark:from-slate-900 dark:to-blue-950/30 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
             <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 font-bold text-xs">
               <Zap className="w-4 h-4" />
               <span>Gated Fusion Advantage</span>
