@@ -1,0 +1,5 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route_text_color
+21A,AGY_TRANSIT_01,21A,Gandhipuram - Ukkadam Express Corridor,3,2563EB,FFFFFF
+45B,AGY_TRANSIT_01,45B,Tech Park - Airport Metro Connector,3,10B981,FFFFFF
+12C,AGY_TRANSIT_01,12C,Vadavalli - Singanallur Cross City Link,3,8B5CF6,FFFFFF
+78,AGY_TRANSIT_01,78,Saravanampatti Tech Zone - Railway Junction,3,F59E0B,FFFFFF

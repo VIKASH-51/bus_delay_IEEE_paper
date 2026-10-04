@@ -1,0 +1,2 @@
+agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
+AGY_TRANSIT_01,Metropolitan Smart City Bus Transit Authority,https://smarttransit.transport.gov,Asia/Kolkata,en,+91-422-2244000

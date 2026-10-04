@@ -1,0 +1,57 @@
+stop_id,stop_name,stop_lat,stop_lon,zone_id,location_type
+STP_01,Gandhipuram Central Bus Terminus,11.0183,76.9656,ZONE_1,0
+STP_02,Cross Cut Road Commercial Hub,11.021,76.9634,ZONE_1,0
+STP_03,100 Feet Road Junction,11.0255,76.961,ZONE_1,0
+STP_04,Ram Nagar North,11.016,76.958,ZONE_1,0
+STP_05,Flyover South Terminal,11.009,76.9615,ZONE_1,0
+STP_06,Railway Station Main Gate,11.0005,76.9665,ZONE_1,0
+STP_07,Collectorate Campus,10.998,76.968,ZONE_1,0
+STP_08,Town Hall South,10.995,76.962,ZONE_1,0
+STP_09,Big Bazaar Street,10.992,76.9585,ZONE_1,0
+STP_10,Valankulam Lake Boulevard,10.988,76.96,ZONE_1,0
+STP_11,Sungam Bypass Junction,10.985,76.965,ZONE_1,0
+STP_12,Al-Ameen Colony,10.979,76.961,ZONE_1,0
+STP_13,Ukkadam Lake Promenade,10.974,76.955,ZONE_1,0
+STP_14,Ukkadam Central Bus Stand,10.971,76.951,ZONE_1,0
+STP_15,South Bypass Interchange,10.966,76.947,ZONE_1,0
+STP_16,Kuniyamuthur Depot,10.958,76.941,ZONE_1,0
+STP_20,TIDEL Park IT Special Zone,11.028,77.025,ZONE_1,0
+STP_21,Aerodrome Road West,11.031,77.032,ZONE_1,0
+STP_22,Airport Terminal 1,11.034,77.039,ZONE_1,0
+STP_23,Civil Aerodrome Station,11.0305,77.045,ZONE_1,0
+STP_24,SITRA Technology Circle,11.026,77.042,ZONE_1,0
+STP_25,Avinashi Road Express Corridor,11.022,77.034,ZONE_1,0
+STP_26,Goldwins Commercial Area,11.02,77.026,ZONE_1,0
+STP_27,Peelamedu Metro Gate,11.018,77.017,ZONE_1,0
+STP_28,PSG Tech Campus Gate,11.015,77.003,ZONE_1,0
+STP_29,Hope College Junction,11.013,76.992,ZONE_1,0
+STP_30,Fun Republic Mall Boulevard,11.011,76.985,ZONE_1,0
+STP_31,Nava India Square,11.009,76.977,ZONE_1,0
+STP_32,Lakshmi Mills Corporate Park,11.007,76.971,ZONE_1,0
+STP_33,Women's Polytechnic,11.005,76.968,ZONE_1,0
+STP_34,Anna Salai Terminal,11.002,76.964,ZONE_1,0
+STP_40,Vadavalli Bus Terminal,11.029,76.902,ZONE_1,0
+STP_41,Mullai Nagar,11.026,76.915,ZONE_1,0
+STP_42,Agriculture University Gate,11.018,76.928,ZONE_1,0
+STP_43,Lawley Road Junction,11.015,76.936,ZONE_1,0
+STP_44,RS Puram Post Office,11.011,76.945,ZONE_1,0
+STP_45,DB Road Shopping Complex,11.009,76.952,ZONE_1,0
+STP_46,Brooke Bond Road,11.006,76.959,ZONE_1,0
+STP_47,Railway Station East Entrance,11.001,76.967,ZONE_1,0
+STP_48,Sungam Lake View,10.994,76.978,ZONE_1,0
+STP_49,Ramanathapuram Circle,10.991,76.989,ZONE_1,0
+STP_50,Olympus Central,10.988,77.001,ZONE_1,0
+STP_51,Singanallur Boat House,10.985,77.015,ZONE_1,0
+STP_52,Singanallur Bus Terminal,10.982,77.026,ZONE_1,0
+STP_60,Saravanampatti IT Corridor,11.079,76.999,ZONE_1,0
+STP_61,KGISL Campus Gate,11.071,76.994,ZONE_1,0
+STP_62,CHIL SEZ Entrance,11.063,76.99,ZONE_1,0
+STP_63,Sivanandapuram,11.055,76.985,ZONE_1,0
+STP_64,Vilankurichi Road Crossing,11.047,76.981,ZONE_1,0
+STP_65,Ganapathy Bus Stand,11.039,76.976,ZONE_1,0
+STP_66,Textool Flyover North,11.031,76.972,ZONE_1,0
+STP_67,Sathy Road Junction,11.025,76.968,ZONE_1,0
+STP_68,Gandhipuram Cross Cut,11.021,76.965,ZONE_1,0
+STP_69,Central Park Roundabout,11.014,76.9655,ZONE_1,0
+STP_70,Collector Office,10.998,76.968,ZONE_1,0
+STP_71,Railway Main Junction,11.0005,76.9665,ZONE_1,0

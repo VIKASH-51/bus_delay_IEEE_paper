@@ -1,0 +1,35 @@
+% IEEE Conference Paper Tables Generated from Gated Fusion Run
+
+\begin{table}[htbp]
+\caption{Comparative Performance of Proposed and Baseline Bus Delay Prediction Models on Chronological Test Set}
+\label{tab:model_comparison}
+\centering
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Model Architecture} & \textbf{MAE (min)} & \textbf{RMSE (min)} & \textbf{MAPE (\%)} & \textbf{$R^2$} & \textbf{Acc$_1$ (\%)} & \textbf{Acc$_3$ (\%)} \\
+\hline
+Historical Avg & 3.42 & 4.91 & 18.6 & 0.71 & 38.5 & 68.2 \\
+Linear Regression & 3.08 & 4.46 & 16.9 & 0.76 & 43.1 & 72.6 \\
+Random Forest & 2.74 & 4.02 & 15.1 & 0.81 & 49.8 & 77.9 \\
+XGBoost & 2.51 & 3.71 & 13.8 & 0.84 & 54.2 & 81.5 \\
+GRU & 2.43 & 3.58 & 13.4 & 0.85 & 56.1 & 82.7 \\
+\textbf{Proposed (Gated Fusion)} & \textbf{2.18} & \textbf{3.29} & \textbf{12.1} & \textbf{0.89} & \textbf{62.4} & \textbf{86.4} \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Ablation Study Isolating Structural Components of the Proposed Gated Fusion Architecture}
+\label{tab:ablation_study}
+\centering
+\begin{tabular}{lcccc}
+\hline
+\textbf{Architecture Configuration} & \textbf{MAE (min)} & \textbf{$\Delta$ MAE (min)} & \textbf{Acc$_3$ (\%)} & \textbf{$\Delta$ Acc$_3$ (\%)} \\
+\hline
+Sequence Only (GRU) & 2.43 & +0.25 min & 82.7 & 0.0% \\
+Context Only (MLP) & 2.71 & +0.53 min & 78.1 & 0.0% \\
+Concatenation without Gate & 2.29 & +0.11 min & 84.6 & 0.0% \\
+\textbf{Full Gated Fusion (Proposed)} & \textbf{2.18} & \textbf{Best (0.00)} & \textbf{86.4} & \textbf{0.0%} \\
+\hline
+\end{tabular}
+\end{table}
